@@ -14,8 +14,11 @@
     justify-content: space-between;
     align-items: center;
 }
-.search {
+.search, 
+.search-result {
     width: 361px;
+}
+.search {
     height: 46px;
     background: rgba(22, 24, 35, .06);
     border-radius: 92px;
@@ -67,10 +70,19 @@
         background: rgba(22, 24, 35, .06);
     }
 }
-.clear, .loading {
+.clear, 
+.loading {
     position: absolute;
     top: 50%;
     right: calc(var(--search-button-width) + 13px);
     transform: translateY(-50%);
     color: rgba(22, 24, 35, 0.34);
+}
+.search-title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }

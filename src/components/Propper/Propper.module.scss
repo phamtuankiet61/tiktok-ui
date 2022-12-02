@@ -1,0 +1,30 @@
+.wrapper {
+    position: absolute;
+    width: 100%;
+    margin-top: 8px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+    border-radius: 8px;
+    padding-top: 8px;
+    max-height: min((100vh - 96px) - 60px, 734px);
+    min-height: 100px;
+    overflow: hidden auto;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+    background: rgb(167 167 171); 
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(167 167 171); 
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(167 167 171); 
+}
