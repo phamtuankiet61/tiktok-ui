@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faPenNib, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faEarthAsia, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 // import 'tippy.js/dist/tippy.css'; // optional
 
@@ -10,26 +10,34 @@ import images from '../../../../assets/image';
 import { Wrapper as PropperWrapper } from '../../../Propper';
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
+import Menu from '../../../Propper/Menu';
 
 const cx = classNames.bind(styles)
 
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts'
+    },
+]
+
 function Header() {
     const [accounts, setAccounts] = useState([]);
-    const [valueInput, setValueInput] = useState('');
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setAccounts([1, 2])
-    //     }, 0)
-    // }, [])
-
-    const handleOninput = (value) => {
-        setAccounts([1, 2])
-        setValueInput(value)
-    }
-    const handleBlur = () => {
-        setAccounts([])
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            setAccounts([])
+        }, 0)
+    }, [])
 
     return (
         <header className={cx('wrapper')}>
@@ -47,22 +55,22 @@ function Header() {
                                     <AccountItem
                                         name="phantuankiet.vn"
                                         userName="Phạm Tuấn Kiệt"  
-                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/86fd7660037e6587340b4cc919516bb5~c5_100x100.jpeg?x-expires=1670140800&x-signature=yT6ytu7d6batpmdR4hn%2BRwtczOk%3D"
+                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fb0c68381e0d6024d85bc51b3ad56fb9~c5_100x100.jpeg?x-expires=1670310000&x-signature=IuJxXKkAFtHFraSffY66O4CMkaI%3D"
                                     />
                                     <AccountItem
                                         name="funfact.66"
                                         userName="Fun fact 66"  
-                                        src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/b32c566cb8a23dd44c1572248a108bc7.jpeg?x-expires=1670140800&x-signature=Ff2gpHhG3COeq2q4ko2svbIK6%2BM%3D"
+                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1670310000&x-signature=W9InTIpH5hz6o9Fau1d%2FCWZ2D9U%3D"
                                     />
                                     <AccountItem
                                         name="vienvibi_899"
                                         userName="Viên Vibi"  
-                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/e6fbccfe920afeb2bdfabdfb472dda06~c5_100x100.jpeg?x-expires=1670140800&x-signature=5oZO55LBqt1M8fBG40Axb8pzu%2FY%3D"
+                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fac92301a36c2275c99f393061ef04ca~c5_100x100.jpeg?x-expires=1670310000&x-signature=1PklSSECmVvQw0nHOsvhy9N5P3I%3D"
                                     />
                                     <AccountItem
                                         name="theanh28entertainment"
                                         userName="Theanh28 Entertainment"  
-                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1670144400&x-signature=Dc4a5Qbn9eyxDOIuJVFUlfB9m6E%3D"
+                                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/be22b8593ea95c8835d47f4b5309ec16~c5_100x100.jpeg?x-expires=1670310000&x-signature=un7seszFCObg9BRweCpBgVeO2UU%3D"
                                     />
                                 </PropperWrapper>
                             </div>
@@ -72,11 +80,6 @@ function Header() {
                         <input 
                             placeholder='Search accounts and videos'
                             spellCheck={false}
-                            value={valueInput}
-                            onInput={e => {
-                                handleOninput(e.target.value)
-                            }}
-                            onBlur={handleBlur}
                         />
                         <button className={cx('clear')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
@@ -89,7 +92,13 @@ function Header() {
                 </Tippy>
                 <div className={cx('actions')}>
                     <Button text >Upload</Button>
-                    <Button primary rightIcon={<FontAwesomeIcon icon={faPenNib} />} >Log in</Button>
+                    <Button primary>Log in</Button>
+
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('menu-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
