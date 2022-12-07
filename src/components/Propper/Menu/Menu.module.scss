@@ -21,6 +21,9 @@
         background: rgba(22, 24, 35, 0.03);
     }
 }
+.spepare {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
 
 // Header-title
 .header {
@@ -31,7 +34,7 @@
     justify-content: center;
     align-items: center;
     margin-top: -8px;
-    cursor: pointer;
+    // cursor: pointer;
 }
 .back-btn {
     position: absolute;

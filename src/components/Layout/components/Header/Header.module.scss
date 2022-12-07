@@ -87,10 +87,32 @@
     font-weight: 600;
     color: rgba(22, 24, 35, 0.5);
 }
-// .actions {
-//     display: flex;
-//     align-items: center;
-// }
+
+// Actions
+.actions {
+    display: flex;
+    align-items: center;
+}
+.actions-btn {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+
+    + .actions-btn {
+        margin-left: 10px;
+    }
+}
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    margin-left: 18px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .menu-btn {
     font-size: 2rem;
     padding: 4px 8px;
