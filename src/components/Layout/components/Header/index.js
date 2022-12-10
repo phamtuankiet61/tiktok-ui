@@ -126,7 +126,7 @@ function Header() {
                         {currentUser ? (
                             <Image 
                                 className={cx('user-avatar')} 
-                                src='https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7174315148310478854~c5_720x720.jpeg?x-expires=1670572800&x-signature=Z4QDUuahaskPcLFORztqKXEGJoY%3D' 
+                                src='https://yt3.ggpht.com/wgneNTiW753q5G6XMnjyNLAzReR4TVFJryTKTpIqJefrKMyhABPwfnyNWIoT5NNGstFlva1tgw=s176-c-k-c0x00ffffff-no-rj' 
                                 alt='Nguyen Van A'
                             />
                         ) : (

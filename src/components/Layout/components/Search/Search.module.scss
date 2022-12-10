@@ -62,6 +62,19 @@
     transform: translateY(-50%);
     color: rgba(22, 24, 35, 0.34);
 }
+.loading {
+    animation: spinner .8s infinite linear;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
 .search-title {
     height: 30px;
     padding: 5px 12px;
