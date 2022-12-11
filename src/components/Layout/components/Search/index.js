@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 
+import * as searchServices from '../../../../apiServices/searchServices';
 import { Wrapper as PropperWrapper } from '../../../Propper';
 import AccountItem from '../../../AccountItem';
 import { useDebounce } from '../../../../hooks';
@@ -26,17 +27,18 @@ function Search() {
             setAccounts([])
             return
         }
-        setLoading(true)
+        
+        const fetchApi = async () => {
+            setLoading(true)
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debounced}&type=less`)
-            .then(res => res.json())
-            .then(res => {
-                setAccounts(res.data)
-                setLoading(false)
-            })
-            .catch(err => {
-                setLoading(false)
-            })
+            const result = await searchServices.search(debounced);
+            setAccounts(result)
+
+            setLoading(false)
+        }
+
+        fetchApi();
+        
     }, [debounced])
 
     const handleClear = () => {
