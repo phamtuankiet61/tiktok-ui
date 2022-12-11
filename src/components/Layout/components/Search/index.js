@@ -7,6 +7,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 
 import { Wrapper as PropperWrapper } from '../../../Propper';
 import AccountItem from '../../../AccountItem';
+import { useDebounce } from '../../../../hooks';
 
 const cx = classNames.bind(styles)
 
@@ -17,15 +18,17 @@ function Search() {
     const [loading, setLoading] = useState(false);
 
     const inputRef = useRef();
+
+    const debounced = useDebounce(searchValue, 600);
     
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounced.trim()) {
             setAccounts([])
             return
         }
         setLoading(true)
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${searchValue}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debounced}&type=less`)
             .then(res => res.json())
             .then(res => {
                 setAccounts(res.data)
@@ -34,7 +37,7 @@ function Search() {
             .catch(err => {
                 setLoading(false)
             })
-    }, [searchValue])
+    }, [debounced])
 
     const handleClear = () => {
         setSearchValue('')
