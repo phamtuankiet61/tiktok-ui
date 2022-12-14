@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion, faCoins, faEarthAsia, faEllipsisVertical, faGear, faKeyboard, faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import images from '../../../../assets/image';
@@ -11,6 +12,7 @@ import Menu from '../../../Propper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '../../../Icons';
 import Image from '../../../Images';
 import Search from '../Search';
+import routesConfig from '../../../../Config/routes';
 
 const cx = classNames.bind(styles)
 
@@ -30,7 +32,7 @@ const MENU_ITEMS = [
                     type: 'language',
                     code: 'vi',
                     title: 'Vietnamese'
-                }
+                },
             ]
         }
     },
@@ -87,9 +89,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
             
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt='tiktok' />
-                </div>
+                </Link>
                 
                 <Search />
 
