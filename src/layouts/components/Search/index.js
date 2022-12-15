@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 
-import * as searchServices from '../../../../apiServices/searchServices';
-import { Wrapper as PropperWrapper } from '../../../Propper';
-import AccountItem from '../../../AccountItem';
-import { useDebounce } from '../../../../hooks';
+import * as searchServices from '../../../services/searchService';
+import { Wrapper as PropperWrapper } from '../../../components/Propper';
+import AccountItem from '../../../components/AccountItem';
+import { useDebounce } from '../../../hooks';
 
 const cx = classNames.bind(styles)
 
