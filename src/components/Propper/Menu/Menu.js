@@ -31,6 +31,22 @@ function Menu({ items, children, hideOnClick = false, onChange = defaultFn }) {
         })
     }
 
+    const renderResult = attrs => (
+        <div className={cx('menu-list')} tabIndex="-1" {...attrs} >
+            <PropperWrapper>
+                {history.length > 1 && <Header title={current.title} onBack={() => {
+                    setHistory(prev => prev.slice(0, prev.length - 1))
+                }}/>}
+                <div className={cx('menu-body')}>{renderItems()}</div>
+            </PropperWrapper>
+        </div>
+    )
+
+    // Reset to first page
+    const handleResetMenu = () => {
+        setHistory(prev => prev.slice(0, 1))
+    };
+
     return (
         <Tippy
             interactive
@@ -38,19 +54,8 @@ function Menu({ items, children, hideOnClick = false, onChange = defaultFn }) {
             hideOnClick={hideOnClick}
             offset={[12, 8]}
             placement='bottom-end'
-            render={attrs => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs} >
-                    <PropperWrapper>
-                        {history.length > 1 && <Header title={current.title} onBack={() => {
-                            setHistory(prev => prev.slice(0, prev.length - 1))
-                        }}/>}
-                        <div className={cx('menu-body')}>{renderItems()}</div>
-                    </PropperWrapper>
-                </div>
-            )}
-            onHide={() => {
-                setHistory(prev => prev.slice(0, 1))
-            }}
+            render={renderResult}
+            onHide={handleResetMenu}
         >
             {children}
         </Tippy>
