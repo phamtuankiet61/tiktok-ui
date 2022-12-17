@@ -76,7 +76,7 @@ function Header() {
     ]
 
     // Handle logic
-    const handleMenuChnage = (menuItem) => {
+    const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
                 // Handle change language
@@ -124,7 +124,7 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChnage}>
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image 
                                 className={cx('user-avatar')} 
