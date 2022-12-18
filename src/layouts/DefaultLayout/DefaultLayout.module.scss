@@ -5,10 +5,10 @@
 }
 .container {
     width: var(--default-layout-width);
+    max-width: 100%;
     display: flex;
     padding: 0 24px;
     margin-top: var(--default-layout-header-height);
-    height: 2000px;
 }
 .content {
     flex: 1;
