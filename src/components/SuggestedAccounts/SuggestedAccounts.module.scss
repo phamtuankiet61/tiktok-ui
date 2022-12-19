@@ -1,0 +1,63 @@
+// SuggestedAccounts
+.wrapper {
+    border-top: 2px solid #f1f1f2;
+    padding: 8px 0;
+}
+.label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    line-height: 2rem;
+    color: rgba(22, 24, 35, .75);
+}
+.more-btn {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 0 8px;
+    margin-top: 8px;
+    color: rgb(254, 44, 85);
+    cursor: pointer;
+}
+
+// AccountItem
+.account-item {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    object-fit: cover;
+}
+.info {
+    flex: 1;
+    margin-left: 8px;
+}
+.nickName {
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+.icon-check {
+    margin-left: 5px;
+    color: rgb(32, 213, 236);
+}
+.name {
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+
+}
