@@ -6,6 +6,7 @@ import styles from "./Button.module.scss";
 const cx = classNames.bind(styles);
 
 function Button({ 
+    className,
     to,
     href,
     primary,
@@ -44,7 +45,7 @@ function Button({
         Comp = 'a';
     }
 
-    const classes = cx('wrapper', {
+    const classes = cx('wrapper', className, {
         primary,
         outline,
         text,

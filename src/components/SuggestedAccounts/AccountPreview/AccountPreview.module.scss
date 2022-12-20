@@ -1,0 +1,64 @@
+.preview {
+    width: 320px;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.following-btn {
+    padding: 8px 16px;
+}
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.nickName {
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 2.2rem;
+}
+.icon-check {
+    margin-left: 5px;
+    width: 14px;
+    height: 14px;
+    color: rgb(32, 213, 236);
+}
+.name {
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 2rem;
+}
+.followers {
+    margin-top: 8px;
+}
+.user-card-followers-count {
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+}
+.user-card-followers {
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 17px;
+    line-height: 20px;
+    margin-right: 10px;
+}
+.user-card-Likes-count {
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+}
+.user-card-likes {
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 17px;
+    line-height: 20px;
+}
